@@ -33,6 +33,8 @@ class WebScraper:
 
                     winToastDisplay(job_name, job_employer)
                     break
+                else:
+                    break
 
 
 def winToastDisplay(job_name, job_employer):
