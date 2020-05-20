@@ -1,0 +1,6 @@
+
+.idea/
+
+.vscode/
+
+app/__pycache__/
