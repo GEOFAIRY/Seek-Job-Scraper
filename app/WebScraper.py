@@ -3,6 +3,7 @@ from time import sleep
 import requests
 from bs4 import BeautifulSoup
 from app import toaster
+import webbrowser
 
 
 class WebScraper:
@@ -31,11 +32,17 @@ class WebScraper:
                     temp = listing.find_all('span')
                     job_employer = temp[7].span.a.string
 
-                    winToastDisplay(job_name, job_employer)
+                    job_link = 'http://seek.co.nz' + temp[0].div.get('href')
+                    print(job_link)
+
+                    winToastDisplay(job_name, job_employer, job_link)
                     break
                 else:
                     break
 
 
-def winToastDisplay(job_name, job_employer):
-    toaster.show_toast(job_name, job_employer)
+def winToastDisplay(job_name, job_employer, job_link):
+    toaster.show_toast(job_name, job_employer, callback_on_click=lambda: open_link(job_link))
+
+def open_link(job_link):
+    webbrowser.open(job_link, new=2)

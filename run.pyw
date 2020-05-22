@@ -1,6 +1,6 @@
 from app import webscraperInstance
 from infi.systray import SysTrayIcon
-hover_text = "SysTrayIcon Demo"
+hover_text = "Seek Job Postings"
 
 
 def close(sysTrayIcon):
