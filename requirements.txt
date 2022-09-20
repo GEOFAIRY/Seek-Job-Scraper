@@ -6,4 +6,4 @@ idna==2.9
 infi.systray==0.1.12
 requests==2.23.0
 win10toast==0.9
-urllib3==1.25.9
+urllib3==1.26.5
